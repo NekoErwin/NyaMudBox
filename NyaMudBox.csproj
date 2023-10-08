@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\ark-pixel-12px-zh_cn.ttf" />
+    <None Remove="Fonts\fusion-pixel.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\ark-pixel-12px-zh_cn.ttf" />
+    <Resource Include="Fonts\fusion-pixel.ttf" />
+  </ItemGroup>
+
+</Project>

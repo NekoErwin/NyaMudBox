@@ -1,0 +1,24 @@
+
+$DebugLogLine("启动 __Boot__.nya");
+
+$PushLine("\n 该脚本为 NyaMudBox 范例脚本 \n");
+$PushLine(" -------------------------- \n\n");
+$PushLine("\n\n\n\n\n\n\n");
+
+// Global Variable
+var MainCharacter = {
+    Level: 1,
+    Gold: 0,
+    Param:{
+        
+    },
+};
+
+
+
+$PushFormatLine(
+    " >> HELLO WORLD !\n" +
+    "    This is a greeting from NyaScript.\n" +
+    "\n\n" +
+    "            <\\@<Continue>>"
+    );

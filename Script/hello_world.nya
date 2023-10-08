@@ -1,0 +1,91 @@
+
+$DebugLogLine("----- Script Begin ------");
+
+$PushFormatLine(
+    " >> HELLO WORLD !\n" +
+    "    This is a greeting from NyaScript.\n" +
+    "\n\n" +
+    "            <\\@<Continue>>"
+    );
+
+$WaitValidInput([0, 500]);
+$DisableAllTextLink();
+
+label mainMenu;
+
+$PushFormatLine(
+    " >> 使用 NyaScript 在 MudBox 上开发文字游戏：\n" +
+    "         \\@<NyaScript 基础>\n" +
+    "         \\@<MudBox 基本指令>\n" +
+    "         \\@<测试控制台>\n" +
+    "          -----\\@<更多>-----"
+    );
+
+var k = $WaitValidInput([0, 1, 2]);
+$DisableAllTextLink();
+
+switch (k){
+    case 0:{
+        $PushFormatLine(
+            " >> NyaScript 基础：\n" +
+            "         文档制作中\n" +
+            "         \\@<返回菜单>\n" 
+            );
+        $WaitInput();
+        $DisableAllTextLink();
+        goto mainMenu;
+    }
+    case 1:{
+        label MudBox基本指令;
+        $PushFormatLine(
+            " >> MudBox 基本指令：\n" +
+            "         在 NyaScript 中，\n" +
+            "         使用 PushLine( string ) 可以在 MudBox 中打印一行文字；\n" +
+            "         使用 \\@<PushFormatLine( string )> 可以在打印格式化文字；\n" +
+            "                ↑↑ 点击函数名可以查看具体信息\n" +
+            "         使用 WaitInput() 可以等待用户点击画面上的文字按钮；\n" +
+            "         使用 \\@<ClearView()> 可以清空 MudBox 的显示内容\n" +
+            "                ↑↑ 点击试试\n" +
+            "         \\@<返回菜单>\n" 
+            );
+        var t = $WaitInput();
+        $DisableAllTextLink();
+        switch (t){
+            case 0:{
+                $PushFormatLine(
+                    " >> PushFormatLine( string )：\n" +
+                    "         输入 \\ @<text,n> 可以将字符串作为按钮，按下时返回数值 n，其中 n 取 [0, 255]\n" +
+                    "               ↑↑ 因为直接打出来会被转义，所以这里多打了一个空格\n" +
+                    "               ↓↓ 如果没有打空格，就会是下面这样\n" + 
+                    "               \\@<text,0>\n" +
+                    "               ↑↑ 点击按钮返回上一级菜单"
+                    );
+                $WaitInput();
+                $DisableAllTextLink();
+                goto MudBox基本指令;
+            }
+            case 1:{
+                $ClearView();
+                goto MudBox基本指令;
+            }
+            case 2: goto mainMenu;
+        }
+        goto mainMenu;
+    }
+    case 2:{
+        $DebugLogLine("test");
+        $DisableAllTextLink();
+        goto mainMenu;
+    }
+}
+
+$PushFormatLine(
+    " >> 打印一个菜单：\n" +
+    "      ▛▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▜ \n" +
+    "      ▌                                          ▌\n" +
+    "      ▌   \\@<状态>      \\@<数据>                         ▌\n" +
+    "      ▌   \\@<设置>      \\@<存档>                         ▌\n" +
+    "      ▌                                          ▌\n" +
+    "      ▙▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▟ \n" +
+    "          -----\\@<更多>-----"
+    );

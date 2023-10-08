@@ -1,0 +1,10 @@
+﻿<Application x:Class="NyaMudBox.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NyaMudBox"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <FontFamily x:Key="ark_pixel_cjk">../Fonts/#Ark Pixel 12px zh_cn</FontFamily>
+        <FontFamily x:Key="fusion-pixel">../Fonts/#Fusion Pixel</FontFamily>
+    </Application.Resources>
+</Application>
